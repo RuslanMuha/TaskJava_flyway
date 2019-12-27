@@ -1,0 +1,39 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    properties:
+#      javax:
+#        persistence:
+#          schema-generation:
+#            create-source: metadata
+#            scripts:
+#              action: drop-and-create
+#              drop-target: src/main/resources/drop.sql
+#              create-target: src/main/resources/create.sql
+      hibernate:
+        use_sql_comments: true
+        format_sql: true
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  datasource:
+    url: jdbc:h2:./quote
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  flyway:
+    enabled: true
+
+
+
+#security
+#token:
+#  expires: 60
+#security:
+#  secretKey: exampleKey
+
+
+
