@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -22,16 +23,21 @@ public class QuoteLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @CreationTimestamp
     @Column(name = "created_date")
-    LocalDateTime createdDate;
+    private LocalDateTime createdDate;
+
     @Column(name = "quote_id")
-    long quoteId;
+    private long quoteId;
+
     @Column(name = "error_code")
     private int errorCode;
 
     @Column(name = "message")
     private String message;
+
     @Column(name = "operation", columnDefinition = "INTEGER")
     @Convert(converter = OperationConverter.class)
-    Operation operation;
+    private Operation operation;
 }

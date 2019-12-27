@@ -1,31 +1,20 @@
 package com.exercise.quotes.controller;
 
-import com.exercise.ExerciseApplication;
 import com.exercise.quotes.dto.ErrorResponse;
 import com.exercise.quotes.dto.QuoteDTO;
-import com.exercise.quotes.utils.ApiQuotesConstants;
 import com.exercise.quotes.utils.LevelError;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-
-
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
 
 import java.util.HashSet;
 

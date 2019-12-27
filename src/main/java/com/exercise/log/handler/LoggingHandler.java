@@ -71,7 +71,6 @@ public class LoggingHandler {
 
         loggingService.save(QuoteLog.builder()
                 .quoteId(id)
-                .createdDate(LocalDateTime.now())
                 .errorCode(exception.getErrorCode())
                 .message(exception.getMessage())
                 .operation(Operation.getOperation(request.getMethod()))
@@ -98,7 +97,6 @@ public class LoggingHandler {
         long id = getId(joinPoint);
         loggingService.save(QuoteLog.builder()
                 .quoteId(id)
-                .createdDate(LocalDateTime.now())
                 .operation(Operation.getOperation(request.getMethod()))
                 .build());
 
